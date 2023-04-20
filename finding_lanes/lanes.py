@@ -95,9 +95,9 @@ def average_slope_intercept(image, lines):
 # Code to perform lane detection on video. Comment out image lane detection code above
 cap = cv2.VideoCapture('test2.mp4')
 while cap.isOpened():
-    _, frame = cap.read()
+    _, frame = cap.read() # Get frames of video
     canny_image = canny(frame) # perform canny edge detection on video fram
-    cropped_image = region_of_interest(canny_image) # Add region of interest 
+    cropped_image = region_of_interest(canny_image) # add region of interest 
     lines = cv2.HoughLinesP(cropped_image, 2, np.pi/180, 100, np.array([]), minLineLength=40, maxLineGap=5) # Apply Hough Transform with 2px and 1 radian degree precision with 100 as threshold for minimum of intersection
     averaged_lines = average_slope_intercept(frame, lines) # Get average of lines detected
     line_image = display_lines(frame, averaged_lines) # Average the lines into one smoother line
