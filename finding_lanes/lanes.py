@@ -78,7 +78,7 @@ def average_slope_intercept(image, lines):
     return np.array([left_line, right_line])
 
 
-## Uncomment to perform lane detection on image. Comment out the video code below
+# # Uncomment to perform lane detection on image. Comment out the video code below
 # image = cv2.imread('test_image.jpg') # read the image as a multi-dimensional numpy array
 # lane_image = np.copy(image) # make copy of image array
 # canny_image = canny(lane_image)
